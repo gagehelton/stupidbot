@@ -14,6 +14,13 @@ async def on_ready():
     print('stupidbot is feeling stupid')
 
 @client.command()
+async def jimmy(ctx):
+#    await ctx.send(open('/root/stupidbot_dropbox/jimmy/jimmy.jpg','r').read())
+    path = '/root/stupidbot_dropbox/jimmy/'
+    j = random.choice(os.listdir(path))
+    await ctx.send(file=discord.File(path+'/'+j))
+
+@client.command()
 async def convert(ctx,*args):
     if('help' in args[0].lower()):
         await ctx.send(open('./help/convert.md','r').read())
