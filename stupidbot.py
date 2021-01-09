@@ -5,7 +5,7 @@ from common import stupid_quotes
 import random
 import os
 import json
-from modules import cnvrt
+from modules import cnvrt,inspirobot
 
 client = commands.Bot(command_prefix = '.')
 
@@ -14,8 +14,13 @@ async def on_ready():
     print('stupidbot is feeling stupid')
 
 @client.command()
+async def wisdom(ctx):
+    f = inspirobot.generate()
+    await ctx.send(file=discord.File(f))
+    os.remove(f)
+ 
+@client.command()
 async def jimmy(ctx):
-#    await ctx.send(open('/root/stupidbot_dropbox/jimmy/jimmy.jpg','r').read())
     path = '/root/stupidbot_dropbox/jimmy/'
     j = random.choice(os.listdir(path))
     await ctx.send(file=discord.File(path+'/'+j))
@@ -31,10 +36,6 @@ async def convert(ctx,*args):
     try: payload = json.loads(stupid_quotes(args[1]))
     except json.decoder.JSONDecodeError:
         payload = str(args[1]).strip()
-        #try: payload = int(args[1])
-        #except ValueError:
-            #try: payload = float(args[1])
-            #except ValueError: payload = args[1]
     except Exception as e: print(type(e).__name__,e.args)
 
     if(isinstance(payload,str)):
