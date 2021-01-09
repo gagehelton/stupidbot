@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/root/stupidbot_env/bin/python3
 import discord
 from discord.ext import commands
 from common import stupid_quotes
