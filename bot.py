@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import random
+import os
 
 client = commands.Bot(command_prefix = '.')
 
@@ -17,4 +18,4 @@ async def jasonism(ctx):
     'Rerecurring']
     await ctx.send(random.choice(jasonisms))
 
-client.run('Nzk3MzA5NzMzMzcxMjQ4Njkx.X_kmjQ.tkBDdEQPa5Nci3tOstxCbIhzCiY')
+client.run(os.environ['DISCORD_TOKEN'])
