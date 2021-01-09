@@ -3,14 +3,14 @@
 **Example Command:**
 ```.convert binary test```
 
-**Syntax:**
+**Command Structure:**
 .convert - calls the convert function
 binary - select conversion type (see types below)
 test - a value to convert
 
-**Conversion Types:**
+**Supported Conversion Types:**
 Binary
 Hex
-ASCII
 
-
+**Notes**
+1. If your value contains spaces wrap the entire string in quotations - "my value"
