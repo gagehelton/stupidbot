@@ -37,6 +37,10 @@ async def jimmy(ctx):
     await ctx.send(file=discord.File(path+'/'+j))
 
 @client.command()
+async def jasonism(ctx):
+    await ctx.send(random.choice(open("/root/stupidbot/assets/jasonisms","r").readlines()))
+
+@client.command()
 async def convert(ctx,*args):
     try:
         if('help' in args[0].lower()):
@@ -57,9 +61,5 @@ async def convert(ctx,*args):
     except Exception as e:
          print(type(e).__name__,e.args) #LOG!
          
-@client.command()
-async def jasonism(ctx):
-    await ctx.send(random.choice(open("./assets/jasonisms","r").readlines()))
-
 client.run(os.environ['DISCORD_TOKEN'])
 
