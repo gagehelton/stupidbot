@@ -1,3 +1,19 @@
+# Commands
+## .convert
+* Converts passed value to binary or hex
+* Syntax - ```.convert CONVERSTION_TYPE VALUE```
+
+## .wisdom
+* Returns inspirobot.me image
+
+## .jimmy
+* Returns an image of Jimmy Rogers sleeping
+
+## .468
+* Returns display size options based on the 4/6/8 rule
+* Syntax ```.468 VALUE```
+* Value is distance to furthest viewer in feet
+
 # Dropbox as CDN
 ## Mount as virtual file system
 1. ```sudo apt install libfuse2```
