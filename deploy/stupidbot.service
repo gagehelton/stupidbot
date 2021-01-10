@@ -3,7 +3,7 @@ Description=Some description
 After=network.target
 
 [Service]
-Environmen=DISCORD_TOKEN=YOUR_DISCORD_TOKEN_HERE
+Environment=DISCORD_TOKEN=YOUR_DISCORD_TOKEN_HERE
 ExecStart=/root/discord/bin/python3 /root/stupidbot/stupidbot.py
 
 [Install]
