@@ -5,13 +5,24 @@ from common import stupid_quotes
 import random
 import os
 import logg3r
-from modules import cnvrt,inspirobot
+from modules import cnvrt,inspirobot,avcalc
 
 client = commands.Bot(command_prefix = '.')
 
 @client.event
 async def on_ready():
     print('stupidbot is feeling stupid')
+
+@client.command(aliases=['468'])
+async def fourSixEight(ctx,*args):
+    fmt = '''
+**Display Sizes for Furthest Viewer @ {feet}'**
+1/4 = {four[0]} - {four[1]}
+1/6 = {six[0]} - {six[1]}
+1/8 = {eight[0]} - {eight[1]}
+'''.format(**avcalc.fourSixEight.get_display_size(int(args[0])))
+
+    await ctx.send(fmt)
 
 @client.command()
 async def wisdom(ctx):
