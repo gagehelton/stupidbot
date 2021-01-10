@@ -2,7 +2,7 @@
 
 # Commands
 ## .convert
-* Converts passed value to binary or hex
+* Converts passed ascii value to binary or hex
 * Syntax - ```.convert CONVERSTION_TYPE VALUE```
 
 ## .wisdom
