@@ -1,3 +1,5 @@
+<h1>The Stupidest of all the Bots</h1>
+
 # Commands
 ## .convert
 * Converts passed value to binary or hex
