@@ -13,6 +13,14 @@ client = commands.Bot(command_prefix = '.')
 async def on_ready():
     print('stupidbot is feeling stupid')
 
+#@client.command()
+#async def help(ctx):
+#    await ctx.send("https://github.com/gagehelton/stupidbot")
+
+@client.command()
+async def test(ctx):
+    await ctx.send(embed=discord.Embed(title="Hello",description="Use `!help` test!"))
+
 @client.command(aliases=['468'])
 async def fourSixEight(ctx,*args):
     fmt = '''
