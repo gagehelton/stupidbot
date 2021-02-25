@@ -34,13 +34,13 @@ async def fourSixEight(ctx,*args):
 
 @client.command(aliases=['mm'])
 async def mm2in(ctx,*args):
-    args = list(args)
-    result = avcalc.mm2in(args)
+    a = "".join([str(i) for i in args])
+    result = avcalc.mm2in(a)
     if(result):
         fmt = '''
 **Millimeters to Inches**
-MM: {_MM}
-IN: {_IN}
+{_MM}
+{_IN}
 '''.format(**result)
     else:
         fmt = '''FAIL'''
