@@ -32,6 +32,21 @@ async def fourSixEight(ctx,*args):
 
     await ctx.send(fmt)
 
+@client.command(aliases=['mm'])
+async def mm2in(ctx,*args):
+    args = list(args)
+    result = avcalc.mm2in(args)
+    if(result):
+        fmt = '''
+**Millimeters to Inches**
+MM: {_MM}
+IN: {_IN}
+'''.format(**result)
+    else:
+        fmt = '''FAIL'''
+
+    await ctx.send(fmt)    
+
 @client.command()
 async def wisdom(ctx):
     f = inspirobot.generate()

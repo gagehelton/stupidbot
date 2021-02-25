@@ -31,3 +31,22 @@ class fourSixEight():
                                         common_sizes[min(common_sizes.keys(), 
                                         key=lambda k: abs(k-float(fv/div)))]))+'" Display']
         return {"feet":f,"four":closest(4),"six":closest(6),"eight":closest(8)}
+
+def mm2in(args):
+    if(not isinstance(args,list)):
+        return False
+    _MM = args[0].strip().replace(" ","").lower().split("x")
+    _IN = []
+    try:
+        _PLACES = int(args[1])
+    except IndexError:
+        _PLACES = 100
+    if(isinstance(_MM,list)):
+        for i in range(len(_MM)):
+            _IN.append(round(float(_MM[i])*0.0394,_PLACES))
+        return {"_MM":"x".join([str(i) for i in _MM]),"_IN":"x".join([str(i) for i in _IN])}
+    return False    
+
+if __name__ == '__main__':
+    print(mm2in(['1200x1000x100']))
+    
